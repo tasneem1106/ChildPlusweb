@@ -1,0 +1,20 @@
+{
+  "name": "child-plus-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "backend",
+    "mobile-client",
+    "supervisor-dashboard"
+  ],
+  "scripts": {
+    "bootstrap": "npm install",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:mobile": "npm run dev --workspace=mobile-client",
+    "dev:dashboard": "npm run dev --workspace=supervisor-dashboard",
+    "dev": "npm run dev --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  }
+}
